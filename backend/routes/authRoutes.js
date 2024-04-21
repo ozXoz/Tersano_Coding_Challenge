@@ -5,9 +5,17 @@ const router = express.Router();
 
 // Signup route
 router.post('/signup', async (req, res) => {
+  const { firstName, lastName, email, password, rePassword } = req.body;
+
+  console.log('Signup request:', firstName, lastName, email);  // Log input data
+
+  // Check if passwords match
+  if (password !== rePassword) {
+    console.log('Password mismatch for:', email);  // Log password mismatch
+    return res.status(400).send({ error: 'Passwords do not match' });
+  }
+
   try {
-    const { firstName, lastName, email, password } = req.body;
-    console.log('Signup request:', firstName, lastName, email);  // Log input data
     const user = new User({ firstName, lastName, email, password });
     await user.save();
     const token = generateToken(user);  // Generate JWT when user signs up
