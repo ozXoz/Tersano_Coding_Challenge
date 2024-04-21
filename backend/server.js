@@ -8,6 +8,7 @@ app.use(cors()); // Enable CORS for all requests
 app.use(express.json());
 
 const authRoutes = require('./routes/authRoutes');
+const productRoutes = require('./routes/productRoutes');  // Import product routes
 
 mongoose
   .connect(process.env.DB_URI, {
@@ -19,6 +20,7 @@ mongoose
 
 
   app.use('/api/auth', authRoutes);
+  app.use('/api/products', productRoutes);  // Use product routes with authentication
 
 
 const PORT = process.env.PORT || 3001;
