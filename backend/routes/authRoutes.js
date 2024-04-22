@@ -28,7 +28,8 @@ router.post('/signup', async (req, res) => {
 });
 
 // Login route
-router.post('/login',authenticateToken, async (req, res) => {
+// Login route
+router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     console.log('Login attempt:', email);  // Log login attempt
@@ -45,6 +46,7 @@ router.post('/login',authenticateToken, async (req, res) => {
     res.status(500).send(error);
   }
 });
+
 
 // Logout
 router.post('/logout', (req, res) => {

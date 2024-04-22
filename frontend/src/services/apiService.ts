@@ -3,25 +3,37 @@ import axios from 'axios';
 const API_URL = 'http://localhost:3001/api'; // Adjust the API URL as needed
 
 // Login function
+
+// Login function
 export const login = async (email: string, password: string) => {
   try {
     const response = await axios.post(`${API_URL}/auth/login`, { email, password });
-    localStorage.setItem('token', response.data.token);
-    return response.data; // Return response data on success
-  } catch (error: any) { // Specify error type as 'any'
-    // Handle different types of errors
-    if (error.response) {
-      // The request was made and the server responded with a status code
-      return { error: error.response.data.error }; // Return error message from server
-    } else if (error.request) {
-      // The request was made but no response was received
-      return { error: 'No response from server' };
+    if (response.data && response.data.token) {
+      localStorage.setItem('token', response.data.token);
+      return response.data;
     } else {
-      // Something happened in setting up the request that triggered an Error
-      return { error: 'An error occurred' };
+      // Log the unexpected response structure
+      console.error('Login response:', response.data);
+      throw new Error('Authentication failed, no token provided');
+    }
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      // Handle HTTP errors from axios and provide detailed error information
+      console.error('Axios error:', error.response ? error.response.data : 'No response');
+      throw new Error(error.response ? (error.response.data.error || 'Login failed with no specific error message') : 'Login failed due to network error');
+    } else {
+      // Handle unexpected errors
+      console.error('Unexpected error:', error);
+      throw new Error('An unexpected error occurred');
     }
   }
 };
+
+
+
+
+
+
 
 
 // Signup function
