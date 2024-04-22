@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
 import { logout } from '../services/apiService';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../css/ProductPage.css'
+
 
 interface Product {
   _id: string;
@@ -81,8 +85,10 @@ const ProductPage: React.FC = () => {
       });
       fetchProducts();
       cancelEditing();  // Reset editing mode
+      toast.success('Product updated successfully!');
     } catch (error) {
       console.error('Failed to update product:', error);
+      toast.error('Failed to update product.');
     }
   };
 
@@ -102,8 +108,10 @@ const ProductPage: React.FC = () => {
       setName('');
       setPrice('');
       setDescription('');
+      toast.success('Product added successfully!');
     } catch (error) {
       console.error('Failed to add product:', error);
+      toast.error('Failed to add product.');
     }
   };
 
@@ -115,7 +123,8 @@ const ProductPage: React.FC = () => {
   const handleDeleteProduct = async (productId: string) => {
     const token = localStorage.getItem('token');
     if (!token) {
-      console.error('Authentication token is missing');
+      toast.error('Authentication token is missing');
+      // console.error('Authentication token is missing');
       return;
     }
     try {
@@ -123,6 +132,7 @@ const ProductPage: React.FC = () => {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchProducts();
+      toast.success('Product deleted successfully!');
     } catch (error) {
       console.error('Failed to delete product:', error);
     }
@@ -185,8 +195,10 @@ const ProductPage: React.FC = () => {
 
   return (
     <div>
+      <div className="page-containerx"> 
       <h2>Product Page</h2>
       <button onClick={handleLogout}>Logout</button>
+      <ToastContainer position="top-right" autoClose={5000} hideProgressBar newestOnTop closeOnClick pauseOnHover draggable />
       <div>
         <h3>Add New Product</h3>
         <input type="text" value={name} onChange={(e => setName(e.target.value))} placeholder="Name" />
@@ -197,6 +209,7 @@ const ProductPage: React.FC = () => {
       <div>
         <h3>All Products</h3>
         {renderProductTable()}
+      </div>
       </div>
     </div>
   );

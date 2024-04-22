@@ -1,6 +1,7 @@
 import React, { useState } from 'react'; // Import useState from react
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import { login } from '../services/apiService'; // Adjust the import path as necessary to where login is defined
+import '../css/LoginForm.css'; // Import the CSS file
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState<string>(''); // Use useState for managing email and password
@@ -22,11 +23,13 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter your email" />
-      <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Enter your password" />
-      <button onClick={handleLogin}>Login</button>
+    <div className="login-container">
+      <div className="form">
+        <h2>Login</h2>
+        <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter your email" />
+        <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Enter your password" />
+        <button onClick={handleLogin}>Login</button>
+      </div>
     </div>
   );
 };

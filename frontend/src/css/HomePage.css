@@ -1,0 +1,46 @@
+/* HomePage.css */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a82fb, #fc5c7d); /* Updated gradient from deep blue to vibrant pink */
+  color: #fff;  /* Changed text color to white for better contrast */
+  font-family: 'Arial', sans-serif;
+}
+
+.home-container h1 {
+  margin-bottom: 20px;
+  color: #ffffff; /* Ensure heading stands out against the gradient */
+}
+
+.links {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.link {
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #ffffff;  /* Adjusted for better visibility on darker backgrounds */
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white for a softer appearance */
+  border: 2px solid #ffffff; /* White border for consistency */
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.link:hover {
+  color: #6a82fb; /* Hover color changes to deep blue to match the gradient start */
+  background-color: #ffffff; /* Full white background on hover */
+}
+
+@media (max-width: 768px) {
+  .links {
+    font-size: 16px;
+  }
+
+  .link {
+    padding: 8px 10px;
+  }
+}
