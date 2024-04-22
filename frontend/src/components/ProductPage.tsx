@@ -35,7 +35,7 @@ const ProductPage: React.FC = () => {
     fetchProducts();
   }, []);
 
-  const API_URL = 'http://localhost:3001/api';
+  const API_URL = 'https://backend-kappa-five-70.vercel.app/api';
 
   const fetchProducts = async (): Promise<void> => {
     const token = localStorage.getItem('token');

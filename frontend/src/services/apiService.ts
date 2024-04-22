@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/api'; // Adjust the API URL as needed
+const API_URL = 'https://backend-kappa-five-70.vercel.app/api'; // Adjust the API URL as needed
+
 
 // Login function
 
