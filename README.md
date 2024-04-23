@@ -27,7 +27,7 @@ A step-by-step guide to get your development environment running:
 
     bash
 
-git clone https://github.com/yourusername/yourprojectname.git
+git clone https://github.com/ozXoz/Tersano_Coding_Challenge.git
 
 Install the required npm packages:
 
