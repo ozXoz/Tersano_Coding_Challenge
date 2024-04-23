@@ -10,6 +10,7 @@ app.use(express.json());
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');  // Import product routes
 const arduinoRoutes = require('./routes/arduinoRoutes');  // make sure the path is correct
+const timerRoutes = require('./routes/timerRoutes'); // Import timer routes
 mongoose.connect(process.env.DB_URI)
 
   .then(() => console.log("Connected to DB"))
@@ -19,6 +20,7 @@ mongoose.connect(process.env.DB_URI)
   app.use('/api/auth', authRoutes);
   app.use('/api/products', productRoutes);  // Use product routes with authentication
   app.use('/api/arduino', arduinoRoutes);
+  app.use('/api/timer', timerRoutes); // Use timer routes
 
 const PORT = process.env.PORT || 3001;
 if (process.env.NODE_ENV !== 'test') {
