@@ -30,6 +30,9 @@ const SignupForm: React.FC = () => {
       toast.error(`Signup failed: ${error.response?.data?.error || 'Unknown error'}`);
     }
   };
+  const handleGoBack = () => {
+    navigate('/login'); // Navigate back to the login page
+  };
 
   return (
     <div className="signup-container">
@@ -41,6 +44,7 @@ const SignupForm: React.FC = () => {
         <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
         <input type="password" value={rePassword} onChange={e => setRePassword(e.target.value)} placeholder="Repeat Password" />
         <button onClick={handleSignup}>Signup</button>
+        <button onClick={handleGoBack}>Go Back</button> {/* Button to go back to the login page */}
       </div>
       <ToastContainer position="top-center" autoClose={5000} hideProgressBar={false} newestOnTop={true} closeOnClick pauseOnFocusLoss draggable pauseOnHover />
     </div>
