@@ -10,11 +10,8 @@ app.use(express.json());
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');  // Import product routes
 
-mongoose
-  .connect(process.env.DB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+mongoose.connect(process.env.DB_URI)
+
   .then(() => console.log("Connected to DB"))
   .catch((error) => console.error(error));
 
@@ -24,4 +21,8 @@ mongoose
 
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+module.exports = app;
