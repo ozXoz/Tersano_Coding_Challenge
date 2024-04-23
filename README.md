@@ -95,6 +95,11 @@ Authors
 
     Frontend for Product Management System
 
+    Live Demo
+
+You can view the live application at https://frontend-phi-rust.vercel.app/.
+
+
 This React application serves as the frontend for managing products and handling user authentication. It interacts with a Node.js backend API to fetch, display, and update product data as well as manage user sessions.
 Features
 
