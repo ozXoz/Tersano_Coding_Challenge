@@ -1,7 +1,7 @@
 import request from 'supertest';
-import app from '../server';  // Ensure this path is correct
+import app from '../server'; 
 import User from '../models/User';
-import mongoose from 'mongoose';  // Ensure mongoose is imported
+import mongoose from 'mongoose';  
 
 describe('Authentication API', () => {
   beforeAll(async () => {

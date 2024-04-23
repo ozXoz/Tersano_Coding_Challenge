@@ -1,7 +1,7 @@
 import request from 'supertest';
-import app from '../server';  // Ensure this path is correct
-import Product from '../models/Product';  // Ensure this is properly mocked if necessary
-import { generateToken } from '../middleware/jwt'; // Ensure this path is correct and the utility exists
+import app from '../server';  
+import Product from '../models/Product';  
+import { generateToken } from '../middleware/jwt'; 
 
 // Mock the Product model
 jest.mock('../models/Product', () => {
@@ -26,15 +26,13 @@ jest.mock('../models/Product', () => {
 });
 
 // Prepare a valid JWT token for testing
-const testUser = { _id: 'testUserId' };  // Mock user data
+const testUser = { _id: 'testUserId' }; 
 const validToken = generateToken(testUser);  // Generate token
 
 describe('Product Routes', () => {
-  // Before all tests, you can set up mock data or establish a database connection if necessary
   beforeAll(async () => {
     // Set up any necessary mock data or database connection here
   });
-  // After all tests, you can close any open connections or perform cleanup
   afterAll(async () => {
     // Close any open connections or perform cleanup here
   });
