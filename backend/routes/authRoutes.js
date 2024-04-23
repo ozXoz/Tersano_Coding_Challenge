@@ -16,6 +16,13 @@ router.post('/signup', async (req, res) => {
   }
 
   try {
+    // Check if user already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      console.log('Signup failed, user already exists:', email);  // Log existing user
+      return res.status(409).send({ error: 'Email already in use' });  // 409 Conflict
+    }
+
     const user = new User({ firstName, lastName, email, password });
     await user.save();
     const token = generateToken(user);  // Generate JWT when user signs up
@@ -23,9 +30,10 @@ router.post('/signup', async (req, res) => {
     res.status(201).send({ user, token });
   } catch (error) {
     console.error('Signup error:', error);  // Log errors
-    res.status(400).send(error);
+    res.status(500).send({ message: "Signup error", error });
   }
 });
+
 
 // Login route
 // Login route
