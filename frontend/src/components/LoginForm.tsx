@@ -26,6 +26,10 @@ const LoginForm: React.FC = () => {
     }
   };
 
+  const handleGoBack = () => {
+    navigate('/'); // Navigate back to the login page
+  };
+
   return (
     <div className="login-container">
       <div className="form">
@@ -34,6 +38,7 @@ const LoginForm: React.FC = () => {
         <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Enter your password" />
         <button onClick={handleLogin}>Login</button>
         <ToastContainer position="top-right" autoClose={5000} hideProgressBar newestOnTop closeOnClick pauseOnHover draggable />
+        <button onClick={handleGoBack}>Go Back</button> {/* Button to go back to the login page */}
 
       </div>
     </div>
