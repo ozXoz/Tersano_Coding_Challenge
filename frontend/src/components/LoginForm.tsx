@@ -1,7 +1,7 @@
-import React, { useState } from 'react'; // Import useState from react
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
-import { login } from '../services/apiService'; // Adjust the import path as necessary to where login is defined
-import '../css/LoginForm.css'; // Import the CSS file
+import React, { useState } from 'react'; 
+import { useNavigate } from 'react-router-dom'; 
+import { login } from '../services/apiService'; 
+import '../css/LoginForm.css'; 
 import { ToastContainer, toast } from 'react-toastify'; //
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -14,6 +14,7 @@ const LoginForm: React.FC = () => {
     try {
       const response = await login(email, password); // Call the login function imported from your service file
       if (response && response.token) {
+        console.log(`User logged in successfully: ${email}`); // Log successful login
         navigate('/products'); // Navigate to products page on successful login
       } else {
         // alert('Login unsuccessful, please check your credentials.');

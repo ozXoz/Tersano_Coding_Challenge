@@ -16,9 +16,6 @@ router.get('/getall', authenticateToken, async (req, res) => {
 });
 
 // POST product - Add a new product
-// Server side implementation for adding a product
-// Server side implementation for adding a product
-// Server side implementation for adding a product
 router.post('/add', authenticateToken, async (req, res) => {
   try {
     const { name, price, description } = req.body;
@@ -39,12 +36,6 @@ router.post('/add', authenticateToken, async (req, res) => {
     res.status(400).json({ message: "Failed to create product", error: error.toString() });
   }
 });
-
-
-
-
-
-
 
 
 // PUT product - Update a product

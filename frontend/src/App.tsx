@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
-import ProductsPage from './components/ProductPage'; // Ensure this component is created
+import ProductsPage from './components/ProductPage'; 
 
 const App: React.FC = () => {
   return (

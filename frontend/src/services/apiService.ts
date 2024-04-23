@@ -1,10 +1,6 @@
 import axios from 'axios';
 
 const API_URL = 'https://backend-kappa-five-70.vercel.app/api'; // Adjust the API URL as needed
-
-
-// Login function
-
 // Login function
 export const login = async (email: string, password: string) => {
   try {
@@ -29,14 +25,6 @@ export const login = async (email: string, password: string) => {
     }
   }
 };
-
-
-
-
-
-
-
-
 // Signup function
 export const signup = async (firstName: string, lastName: string, email: string, password: string, rePassword: string) => {
   try {

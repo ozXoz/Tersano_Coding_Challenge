@@ -34,7 +34,6 @@ describe('Product Routes', () => {
   beforeAll(async () => {
     // Set up any necessary mock data or database connection here
   });
-
   // After all tests, you can close any open connections or perform cleanup
   afterAll(async () => {
     // Close any open connections or perform cleanup here

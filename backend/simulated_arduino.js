@@ -1,6 +1,6 @@
 const axios = require('axios');
 const apiUrl = 'http://localhost:3001/api/arduino/data';
-const loginUrl = 'http://localhost:3001/api/auth/login'; // Adjust as necessary
+const loginUrl = 'http://localhost:3001/api/auth/login'; 
 
 async function getAuthToken() {
     try {

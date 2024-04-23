@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signup } from '../services/apiService'; // Adjust the import path as necessary
-import '../css/SignupForm.css'; // Make sure the path is correct
+import { signup } from '../services/apiService'; 
+import '../css/SignupForm.css'; 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,7 +12,7 @@ const SignupForm: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [rePassword, setRePassword] = useState<string>('');
-  const navigate = useNavigate(); // Use useNavigate instead of useHistory
+  const navigate = useNavigate(); 
 
   const handleSignup = async () => {
     if (password !== rePassword) {
@@ -23,9 +23,11 @@ const SignupForm: React.FC = () => {
     try {
       await signup(firstName, lastName, email, password, rePassword);
       toast.success('Signup successful!');
+      console.log(`User registered successfully: ${email}`); // Log successful registration
       // navigate('/login'); // Use navigate to redirect to login page on successful signup
     } catch (error: any) { // Specify error type as any
       console.error('Signup failed:', error);
+      
       // alert('Failed to signup: ' + error.response?.data?.error); // Use optional chaining to access response data
       toast.error(`Signup failed: ${error.response?.data?.error || 'Unknown error'}`);
     }

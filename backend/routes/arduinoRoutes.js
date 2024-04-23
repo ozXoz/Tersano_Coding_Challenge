@@ -1,4 +1,3 @@
-// File: routes/arduinoRoutes.js
 
 const express = require('express');
 const router = express.Router();
@@ -10,7 +9,6 @@ router.post('/data', authenticateToken, async (req, res) => {
 
     console.log("Received sensor data:", req.body);
 
-    // Here you can save the data to your database or perform other actions
     // For simulation, just sending back the received data
     res.status(201).json({
         message: "Sensor data received successfully",

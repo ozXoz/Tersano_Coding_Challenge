@@ -1,6 +1,6 @@
 const express = require('express');
 const User = require('../models/User');
-const { generateToken,authenticateToken } = require('../middleware/jwt');  // Import JWT middleware
+const { generateToken,authenticateToken } = require('../middleware/jwt');  
 const router = express.Router();
 
 // Signup route
@@ -35,7 +35,6 @@ router.post('/signup', async (req, res) => {
 });
 
 
-// Login route
 // Login route
 router.post('/login', async (req, res) => {
   try {

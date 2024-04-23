@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../css/HomePage.css';  // Ensure the CSS path is correct
+import '../css/HomePage.css'; 
 
 const HomePage: React.FC = () => {
   return (
