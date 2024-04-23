@@ -41,8 +41,6 @@ Running the application
 
 To start the server, run:
 
-sql
-
 npm start
 
 For development, you can use nodemon to watch for changes:
@@ -87,12 +85,8 @@ Contributing
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 Authors
 
-    Your Name - Initial work - YourUsername
+   Oz Onur Korkmaz - Initial work - ozXoz
 
-License
-
-This project is licensed under the ISC License - see the LICENSE.md file for details.
-Acknowledgments
 
     Hat tip to anyone whose code was used
     Inspiration
