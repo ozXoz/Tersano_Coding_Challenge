@@ -97,3 +97,95 @@ Acknowledgments
     Hat tip to anyone whose code was used
     Inspiration
     etc.
+
+
+    Frontend for Product Management System
+
+This React application serves as the frontend for managing products and handling user authentication. It interacts with a Node.js backend API to fetch, display, and update product data as well as manage user sessions.
+Features
+
+    User Authentication (Signup, Login, Logout)
+    Product Display and Management (Add, Edit, Delete)
+    Responsive UI with React Toast Notifications
+
+Getting Started
+
+Follow these instructions to get the project up and running on your local machine for development and testing purposes.
+Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+    Node.js (Preferably the latest LTS version)
+    npm (Node Package Manager)
+
+Installing
+
+    Clone the repository:
+
+    bash
+
+git clone https://github.com/ozXoz/Tersano_Coding_Challenge.git
+
+Navigate to the project directory:
+
+bash
+
+cd yourfrontendproject
+
+Install dependencies:
+
+bash
+
+    npm install
+
+Running the Application
+
+To start the development server:
+
+bash
+
+npm start
+
+This command runs the app in the development mode. Open http://localhost:3000 to view it in the browser. The page will reload if you make edits.
+Building for Production
+
+To build the app for production to the build folder:
+
+bash
+
+npm run build
+
+This correctly bundles React in production mode and optimizes the build for the best performance.
+Testing
+
+Run the following command to launch the test runner:
+
+bash
+
+npm test
+
+Available Scripts
+
+In the project directory, you can run several commands:
+
+    npm start: Runs the app in the development mode.
+    npm test: Launches the test runner in the interactive watch mode.
+    npm run build: Builds the app for production to the build folder.
+    npm run eject: If you aren’t satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
+
+Deployment
+
+To deploy on a live system, consider using services like Vercel, Netlify, or AWS Amplify which provide seamless integration with React applications.
+Built With
+
+    React - A JavaScript library for building user interfaces
+    React Router - Collection of navigational components
+    Axios - Promise based HTTP client for the browser and node.js
+    React Toastify - Adding notifications to your app with ease
+
+
+Live Demo
+
+You can view the live application at https://frontend-phi-rust.vercel.app/.
+
+
